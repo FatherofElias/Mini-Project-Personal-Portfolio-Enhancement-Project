@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Daniel Wallace - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>Home</header>
+    <h2>My Personal Portfolio</h2>
+    <p>My name is <strong>Daniel Wallace!</strong>. <br>Welcome to my portfolio.</p>
+    <img width="160" height="220" src="profile.jpg" alt="professional profile picture">
+
+    <nav></nav>
+        <ul>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#projects">My Projects</a></li>
+            <li><a href="#skills">My Skills</a></li>
+            <li><a href="#contact">Contact Me</a></li>
+        </ul>
+    </nav>
+
+
+    <section id="about">
+        <h2>About Me</h2>
+        <article>
+            <h3>Bio</h3>
+            <p>I am a 27 year old Male, from Nebraska. I am an aspiring software engineer. I am currently in phone sales in the meantime. <br> I have a 9 year old son who I enjoy spending my time with and we both play PC. He actually was the one to get me into my love of computers. <br> I now build and repair computers for charity in my free time. I now am looking to delve into the software side of things a little more. <br>I am currently working in phone sales for a company named MarketSource inside of walmart stores.</p>
+            <h4>Education</h4>
+            <ul>
+                <li>High School: Home School; Graduated in 2015</li>
+                <li>Higher Education: Coding Temple; Currently Enrolled</li>
+            </ul>
+            <h4>Goals</h4>
+            <ul>
+                <li>Become a sofware engineer</li>
+                <li>Continue to get better at coding in different languages</li>
+                <li>Get a really good job in software engineering</li>
+                <li>Quit my job in cellphone sales</li>
+            </ul>
+            <h4>Personal Interests</h4>
+            <ul>
+                <li>Computers and Computer technology</li>
+                <li>Building and repairing computer hardware</li>
+                <li>Spending time with my son and family</li>
+            </ul>
+        </article>
+    </section>
+
+    <section id="projects">
+        <h2>My Projects</h2>
+        <h3>E-Commerce API Application</h3>
+        
+            <img width="160" height="220" src="ecommerce.png" alt="photo of ecommerce project">
+        
+        <a href="https://github.com/FatherofElias/Mini-Project-E-Commerce-API">E-Commerce API Project</a>
+        <p>This project uses database integration with Python, my sql workbench, and the postman application. The app uses Flask, SQLAlchemy and Marshmallow. <br>It works at an E-commerce database to store customer orders and other information. <br>It was all made possible inside of VSCode.</p>
+
+        <h3>Library Management System w/ Database integration</h3>
+    
+            <img width="160" height="220" src="library.png" alt="photo of LMS project">
+         
+        <a href="https://github.com/FatherofElias/Mini-Project-Library-Management-System-DATABASE-INTEGRATION">Library Management System w/ Database integration</a>
+        <p>This project uses database integration with Python and my sql workbench. The app uses mysql.connector to connect to the sql server and uses a modular approach. <br>This app works as a library management system to store books and library users and what books are checked in and out. <br>It was again, all made possible inside of VSCode.</p>
+
+
+        <h3>Contact Management Systemn</h3>
+            <img width="160" height="220" src="contact.png" alt="photo of CMS project">
+         
+        <a href="https://github.com/FatherofElias/Mini-Project-Contact-management-System">Contact Management System</a>
+        <p>This project uses Python with regex. Regex (Regular Expressions) are used to validate characters or set the parameters for user input. <br> This app stores contacts for users using regex. <br>It was again, all made possible inside of VSCode.</p>
+
+    </section>
+
+
+    <section id="skills">
+        <h2>My Skills</h2>
+
+        <div class="skill-bar">
+            <div class="label">HTML</div>
+            <div class="bar">
+                <div class="progress html">70%</div>
+            </div>
+        </div>
+    
+        <div class="skill-bar">
+            <div class="label">Python</div>
+            <div class="bar">
+                <div class="progress python">70%</div>
+            </div>
+        </div>
+    
+        <div class="skill-bar">
+            <div class="label">MySQL</div>
+            <div class="bar">
+                <div class="progress mysql">70%</</div>
+            </div>
+        </div>
+
+        <div class="skill-bar">
+            <div class="label">VSCode</div>
+            <div class="bar">
+                <div class="progress vscode">80%</div>
+            </div>
+        </div>
+    
+        <div class="skill-bar">
+            <div class="label">Postman Application</div>
+            <div class="bar">
+                <div class="progress postman">70%</div>
+            </div>
+        </div>
+        <p>I am moderately proficient in the languages and softwares listed but I am still getting better everyday.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Conatct Me</h2>
+        <div>
+            <form action="/submit_contact" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+    
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+    
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+    
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+
+        <div>
+            <p>Email: <a href="mailto:daniel.wallace@example.com">daniel.wallace@example.com</a></p>
+            <div>
+                <a href="https://www.linkedin.com/in/daniel-wallace-71315b168/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/FatherofElias" target="_blank">GitHub</a>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; All rights reserved. Daniel Wallace 2024 </p>
+    </footer>
+
+
+</body>
+
+</html>
