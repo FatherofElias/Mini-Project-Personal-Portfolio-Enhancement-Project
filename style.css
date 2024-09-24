@@ -10,7 +10,18 @@
     --profile-pic-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     --section-padding: 20px;
     --line-height: 1.6;
+    --skill-bar-height: 25px;
+    --skill-bar-radius: 12px;
+    --skill-bar-bg: #f3f3f3;
+    --skill-bar-color: white;
+    --skill-bar-padding: 5px;
+    --skill-bar-margin: 10px 0;
+    --highlight-bg: #e0f7fa;
+    --highlight-border: 1px solid #4caf50;
+    --highlight-padding: 10px;
+    --highlight-margin: 10px 0;
 }
+
 
 body {
     font-family: var(--font-family);
@@ -20,7 +31,6 @@ body {
     padding: 0;
 }
 
-
 header {
     background-color: var(--primary-color);
     color: white;
@@ -29,7 +39,6 @@ header {
     font-size: var(--header-font-size);
     font-weight: bold;
 }
-
 
 h2 {
     color: var(--secondary-color);
@@ -45,14 +54,12 @@ p {
     line-height: var(--line-height);
 }
 
-
 img {
     display: block;
     margin: 20px auto;
     border-radius: 10%;
     box-shadow: var(--profile-pic-shadow);
 }
-
 
 nav ul {
     list-style-type: none;
@@ -75,28 +82,32 @@ nav ul li a:hover {
     color: var(--secondary-color);
 }
 
+
 .skill-bar {
-    margin: 20px 0;
+    margin: var(--skill-bar-margin);
+    background-color: var(--skill-bar-bg);
+    border-radius: var(--skill-bar-radius);
+    overflow: hidden;
+    position: relative;
+    height: var(--skill-bar-height);
 }
 
 .skill-bar .label {
+    position: absolute;
+    left: var(--skill-bar-padding);
+    top: 50%;
+    transform: translateY(-50%);
     font-weight: bold;
+    color: var(--secondary-color);
 }
 
 .skill-bar .bar {
-    width: 100%;
-    background-color: #f3f3f3;
-    border-radius: 5px;
-    overflow: hidden;
-}
-
-.skill-bar .bar .progress {
-    height: 20px;
-    border-radius: 5px;
+    height: 100%;
+    border-radius: var(--skill-bar-radius);
     text-align: right;
-    padding-right: 5px;
-    color: white;
-    line-height: 20px;
+    padding-right: var(--skill-bar-padding);
+    color: var(--skill-bar-color);
+    line-height: var(--skill-bar-height);
 }
 
 .html { width: 70%; background-color: #4caf50; }
@@ -113,34 +124,42 @@ section {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-
-#about h2 {
+#about h2, #projects h2, #skills h2, #contact h2 {
     color: var(--primary-color);
     text-align: center;
     font-size: var(--welcome-font-size);
     margin-bottom: 20px;
 }
 
-#about article {
+#about article, #projects article, #skills article, #contact article {
     line-height: var(--line-height);
     font-size: var(--paragraph-font-size);
 }
 
-#about h3, #about h4 {
+#about h3, #about h4, #projects h3, #skills h3, #contact h3 {
     color: var(--secondary-color);
     margin-top: 20px;
 }
 
-#about ul {
+#about ul, #projects ul, #skills ul, #contact ul {
     list-style-type: disc;
     padding-left: 20px;
 }
 
-#about ul li {
+#about ul li, #projects ul li, #skills ul li, #contact ul li {
     margin-bottom: 10px;
 }
 
-/* Typography Enhancements */
+
+#about .highlight {
+    background-color: var(--highlight-bg);
+    border: var(--highlight-border);
+    padding: var(--highlight-padding);
+    margin: var(--highlight-margin);
+    border-radius: 8px;
+}
+
+
 strong {
     color: var(--primary-color);
 }
@@ -152,4 +171,34 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+
+
+@media (max-width: 768px) {
+    header {
+        font-size: 20px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+}
+
+
+button:hover, a:hover {
+    opacity: 0.8;
+}
+
+
+button, a {
+    transition: opacity 0.3s ease;
 }
