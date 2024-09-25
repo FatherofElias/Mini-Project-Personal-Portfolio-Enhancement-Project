@@ -294,6 +294,15 @@ a:focus {
     outline-offset: 4px;
 }
 
+
+button:hover, a:hover {
+    opacity: 0.8;
+}
+
+button, a {
+    transition: opacity var(--transition-duration);
+}
+
 @media (max-width: 768px) {
     header {
         font-size: 20px;
@@ -317,13 +326,6 @@ a:focus {
     }
 }
 
-button:hover, a:hover {
-    opacity: 0.8;
-}
-
-button, a {
-    transition: opacity var(--transition-duration);
-}
 
 
 @keyframes fadeIn {
