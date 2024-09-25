@@ -7,21 +7,20 @@
     --header-font-size: 24px;
     --welcome-font-size: 32px;
     --paragraph-font-size: 18px;
-    --profile-pic-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --default-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     --section-padding: 20px;
     --line-height: 1.6;
-    --skill-bar-height: 25px;
-    --skill-bar-radius: 12px;
-    --skill-bar-bg: #f3f3f3;
-    --skill-bar-color: white;
-    --skill-bar-padding: 5px;
-    --skill-bar-margin: 10px 0;
     --highlight-bg: #e0f7fa;
-    --highlight-border: 1px solid #4caf50;
-    --highlight-padding: 10px;
-    --highlight-margin: 10px 0;
+    --card-bg: #fff;
+    --card-radius: 8px;
+    --card-padding: 20px;
+    --card-margin: 20px 0;
+    --input-border: 1px solid #ccc;
+    --input-focus-border: 1px solid var(--primary-color);
+    --button-bg: var(--primary-color);
+    --button-hover-bg: #45a049;
+    --transition-duration: 0.3s;
 }
-
 
 body {
     font-family: var(--font-family);
@@ -58,7 +57,13 @@ img {
     display: block;
     margin: 20px auto;
     border-radius: 10%;
-    box-shadow: var(--profile-pic-shadow);
+    box-shadow: var(--default-box-shadow);
+    transition: transform var(--transition-duration), box-shadow var(--transition-duration);
+}
+
+img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 nav ul {
@@ -76,25 +81,25 @@ nav ul li a {
     text-decoration: none;
     color: var(--primary-color);
     font-weight: bold;
+    transition: color var(--transition-duration);
 }
 
 nav ul li a:hover {
     color: var(--secondary-color);
 }
 
-
 .skill-bar {
-    margin: var(--skill-bar-margin);
-    background-color: var(--skill-bar-bg);
-    border-radius: var(--skill-bar-radius);
+    margin: 10px 0;
+    background-color: #f3f3f3;
+    border-radius: 12px;
     overflow: hidden;
     position: relative;
-    height: var(--skill-bar-height);
+    height: 25px;
 }
 
 .skill-bar .label {
     position: absolute;
-    left: var(--skill-bar-padding);
+    left: 5px;
     top: 50%;
     transform: translateY(-50%);
     font-weight: bold;
@@ -103,14 +108,19 @@ nav ul li a:hover {
 
 .skill-bar .bar {
     height: 100%;
-    border-radius: var(--skill-bar-radius);
+    border-radius: 12px;
     text-align: right;
-    padding-right: var(--skill-bar-padding);
-    color: var(--skill-bar-color);
-    line-height: var(--skill-bar-height);
+    padding-right: 5px;
+    color: white;
+    line-height: 25px;
+    transition: background-color var(--transition-duration);
 }
 
-.html { width: 70%; background-color: #4caf50; }
+.skill-bar .bar:hover {
+    background-color: #333;
+}
+
+.html { width: 70%; background-color: var(--primary-color); }
 .python { width: 70%; background-color: #ff9800; }
 .mysql { width: 70%; background-color: #9c27b0; }
 .vscode { width: 80%; background-color: #2196f3; }
@@ -121,7 +131,7 @@ section {
     margin: 20px 0;
     background-color: white;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--default-box-shadow);
 }
 
 #about h2, #projects h2, #skills h2, #contact h2 {
@@ -150,15 +160,115 @@ section {
     margin-bottom: 10px;
 }
 
-
 #about .highlight {
     background-color: var(--highlight-bg);
-    border: var(--highlight-border);
-    padding: var(--highlight-padding);
-    margin: var(--highlight-margin);
+    border: 1px solid var(--primary-color);
+    padding: 10px;
+    margin: 10px 0;
     border-radius: 8px;
 }
 
+.project-card {
+    background-color: var(--card-bg);
+    box-shadow: var(--default-box-shadow);
+    border-radius: var(--card-radius);
+    padding: var(--card-padding);
+    margin: var(--card-margin);
+    text-align: center;
+    transition: transform var(--transition-duration), box-shadow var(--transition-duration);
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.project-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.project-card a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color var(--transition-duration);
+}
+
+.project-card a:hover {
+    color: var(--secondary-color);
+}
+
+.project-card p {
+    color: var(--text-color);
+    font-size: var(--paragraph-font-size);
+    line-height: var(--line-height);
+}
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#contact label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#contact input, #contact textarea {
+    width: 80%;
+    padding: 10px;
+    margin-top: 5px;
+    border: var(--input-border);
+    border-radius: 5px;
+    font-size: var(--paragraph-font-size);
+    transition: border var(--transition-duration);
+}
+
+#contact input:focus, #contact textarea:focus {
+    border: var(--input-focus-border);
+    outline: none;
+}
+
+#contact button {
+    background-color: var(--button-bg);
+    color: white;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: var(--paragraph-font-size);
+    transition: background-color var(--transition-duration), transform var(--transition-duration);
+}
+
+#contact button:hover {
+    background-color: var(--button-hover-bg);
+}
+
+#contact button:active {
+    transform: scale(0.98);
+}
+
+#contact .social-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#contact .social-links a {
+    color: var(--primary-color);
+    margin: 0 10px;
+    font-size: 24px;
+    transition: color var(--transition-duration);
+}
+
+#contact .social-links a:hover {
+    color: var(--secondary-color);
+}
 
 strong {
     color: var(--primary-color);
@@ -167,12 +277,17 @@ strong {
 a {
     color: var(--primary-color);
     text-decoration: none;
+    transition: color var(--transition-duration);
 }
 
 a:hover {
-    text-decoration: underline;
+    color: var(--secondary-color);
 }
 
+a:focus {
+    outline: 2px dashed var(--primary-color);
+    outline-offset: 4px;
+}
 
 @media (max-width: 768px) {
     header {
@@ -191,14 +306,16 @@ a:hover {
         display: block;
         margin: 10px 0;
     }
-}
 
+    #contact input, #contact textarea {
+        width: 100%;
+    }
+}
 
 button:hover, a:hover {
     opacity: 0.8;
 }
 
-
 button, a {
-    transition: opacity 0.3s ease;
+    transition: opacity var(--transition-duration);
 }
