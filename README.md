@@ -7,7 +7,6 @@ Welcome to my personal portfolio website! This project showcases my skills, proj
 - Overview
 - Features
 - Usage
-- Contact
 
 ## Overview
 
@@ -30,14 +29,5 @@ This portfolio website is built using HTML and CSS. It provides information abou
 - **Skills**: View my skills and proficiency levels.
 - **Contact**: Fill out the contact form to get in touch with me.
 
-## Contact
-
-Feel free to reach out to me via email or connect with me on LinkedIn and GitHub:
-
-- **Email**: daniel.wallace@example.com
-- **LinkedIn**: Daniel Wallace
-- **GitHub**: FatherofElias
-
----
 
 © 2024 Daniel Wallace. All rights reserved.
